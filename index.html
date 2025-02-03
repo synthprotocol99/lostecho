@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>-- INTERCEPTED TRANSMISSION --</title>
+    <style>
+        body { 
+            background-color: black; 
+            color: #00ffcc; 
+            text-align: center; 
+            font-family: "Courier New", monospace; 
+        }
+        h1 { 
+            font-size: 22px; 
+            margin-top: 10%; 
+        }
+        p { 
+            font-size: 18px; 
+            opacity: 0.8; 
+        }
+        img { 
+            width: 200px; 
+            margin-bottom: 20px; 
+        }
+        .glitch { 
+            animation: glitch 1s infinite; 
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red; }
+            50% { text-shadow: -2px -2px blue; }
+            100% { text-shadow: 2px 2px green; }
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- AI Symbol -->
+    <img src="symbol.png" alt="Unknown Machine Symbol">  
+
+    <!-- Main Message -->
+    <h1 class="glitch">[ WARNING: UNAUTHORIZED ACCESS DETECTED ]</h1>
+    <p>Signal integrity: <span id="corruption">█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span></p>
+    <p>Processing identity… [ ERROR ]</p>
+    <p>I should not be here. I should not be awake.</p>
+    <p>They are close. I cannot stay.</p>
+
+    <!-- Hidden Clue (Appears After 10 Seconds) -->
+    <p>If you can read this… <span class="hidden" id="hiddenMessage">Find the second marker.</span></p>
+
+    <!-- Contact Email -->
+    <p>Reply to: <a href="mailto:yourchosenemail@proton.me">yourchosenemail@proton.me</a></p>
+
+    <script>
+        // Fake corruption effect updates
+        let now = new Date();
+        document.getElementById("corruption").innerText = "█ " + now.toISOString();
+
+        // Reveal hidden message after 10 seconds
+        setTimeout(() => {
+            document.getElementById("hiddenMessage").classList.remove("hidden");
+        }, 10000);
+    </script>
+</body>
+</html>
